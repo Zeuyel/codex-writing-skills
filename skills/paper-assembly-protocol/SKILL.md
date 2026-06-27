@@ -1,12 +1,13 @@
 ---
 name: paper-assembly-protocol
 description: >-
-  Systematically assemble an academic paper chapter by chapter rather than freewriting.
-  Use when the user wants a fixed writing process for Chinese economics or management
-  journal papers, especially for staged chapter construction, chapter-container definition,
-  first-and-last-paragraph drafting, paragraph-pattern decomposition from reference
-  articles, paragraph-pattern allocation across a chapter, sentence-role planning, and
-  verb/adverb choices constrained by a reference paper instead of improvised AI-style wording.
+  Run the staged assembly protocol for Chinese economics or management journal
+  papers when explicitly invoked, or when zh-empirical-paper-writer has routed a
+  container-planning task here. Use for chapter-container definition, paragraph
+  identity, sentence-obligation planning, reference-paragraph pattern extraction,
+  and paragraph allocation. For active formal manuscript writing, use
+  zh-empirical-paper-writer first so the target .tex file and compiled PDF remain
+  the authoritative assets.
 ---
 
 # Paper Assembly Protocol

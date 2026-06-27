@@ -1,12 +1,13 @@
 ---
 name: empirical-literature-builder
 description: >-
-  Build or revise literature reviews for economics and management empirical papers,
-  especially when the review must be organized by theme, viewpoint, method, or
-  mechanism rather than by article list; use when collecting text-identification
-  methods, preparing research-gap and research-value transitions, or continuing the
-  ai-innovation-lean project's theory-driven empirical writing under strict process
-  boundaries.
+  Build or revise literature-review logic for economics and management empirical
+  papers when explicitly invoked, or when zh-empirical-paper-writer has routed a
+  literature-review task here. Use for theme, viewpoint, method, or mechanism
+  grouping, text-identification method review, research-gap transitions, and
+  ai-innovation-lean boundaries. For active manuscript writing, use
+  zh-empirical-paper-writer first so review prose and planning are applied to the
+  target TeX/PDF assets.
 ---
 
 # Empirical Literature Builder

@@ -1,0 +1,4 @@
+interface:
+  display_name: "ZH Empirical Paper Writer"
+  short_description: "中文实证论文 TeX/PDF 写作编排、审查与编译总控"
+  default_prompt: "Use $zh-empirical-paper-writer to plan, draft, revise, and audit this Chinese empirical paper directly in TeX/PDF."

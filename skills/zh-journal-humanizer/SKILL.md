@@ -2,13 +2,12 @@
 name: zh-journal-humanizer
 description: >-
   Rewrite or review Chinese academic prose in a natural Chinese economics and
-  management journal style. Use when revising theory-driven or empirical
-  manuscripts, abstracts, introductions, theory sections, research design
-  sections, mechanism sections, robustness sections, or conclusions; when the
-  user asks to fix 帽子段, paragraph transitions, chapter or section openings
-  and closings, paragraph-internal 铺垫 and 落点; or when generic humanizing is
-  not enough and the text must read like a Chinese journal article rather than
-  AI-generated prose.
+  management journal style when explicitly invoked for isolated prose work, or
+  when zh-empirical-paper-writer has routed a prose-revision or post-draft wording
+  task here. Use for 帽子段, paragraph transitions, openings and closings,
+  sentence obligations, term and collocation discipline, and anti-translationese.
+  For formal paper drafting in a project, use zh-empirical-paper-writer first so
+  prose changes are written directly to TeX/PDF rather than Markdown drafts.
 ---
 
 # Zh journal humanizer
