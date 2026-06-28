@@ -3,53 +3,171 @@
 Use for `container-planning`: chapter containers, paragraph identities,
 paragraph obligations, sentence obligations, and paragraph-pattern allocation.
 
-## Core Rule
+## Contents
+
+1. Core constraints
+2. Fixed staged workflow
+3. Chapter and section containers
+4. First and last paragraphs
+5. Reference-paragraph pattern inventory
+6. Paragraph allocation
+7. Sentence-role planning
+8. Output discipline
+
+## 1. Core Constraints
 
 Planning is not a Markdown deliverable during active manuscript work. When a
 target `.tex` file exists, install approved planning in TeX comments near the
 affected passage. Keep it hidden from the PDF unless the user requests PDF
 review.
 
-## Fixed Order
+- Do not freewrite a whole chapter by default.
+- Do not jump directly from an outline to polished prose.
+- Treat chapter and section types as fixed containers before writing.
+- Quality comes mainly from paragraph arrangement and sentence roles inside
+  containers, not from one-pass generation.
+- Every staged planning step is gated by user review unless the user explicitly
+  asks for direct execution.
+- If the current step is `paragraph套路` or `sentence身份/义务`, do not generate
+  chapter prose. Keep output at the planning layer.
+- Use one planning template in fixed order:
+  `段落身份 -> 段落职责 -> 段落套路 -> 句子序列 -> 当前义务`.
 
-1. Fill chapter or section slots.
-2. Fix paragraph identities for required first, last, transition, and evidence
-   paragraphs.
-3. For each fixed paragraph, define paragraph duty and paragraph pattern.
-4. Assign a sentence-role sequence before drafting prose.
-5. Draft first and last paragraphs before middle paragraphs when the section is
-   being built from scratch.
-6. Decompose reference-paper paragraphs into reusable patterns when a reference
-   paper is provided.
-7. Allocate patterns across remaining paragraphs to avoid repetitive rhythm.
-8. Draft or revise remaining prose only after the planning layer is approved.
+If wording becomes in scope, load `chinese-journal-style.md`. If the chapter is
+a literature review, load `literature-review.md`.
 
-## Unified Planning Template
+## 2. Fixed Staged Workflow
 
-Use this order consistently:
+Follow this order unless the user explicitly overrides it:
 
-```text
-段落身份 -> 段落职责 -> 段落套路 -> 句子序列 -> 当前义务
-```
+1. fill the chapter or section slots
+2. map sentence obligations for first and last paragraphs
+3. write first and last paragraphs as manuscript prose
+4. decompose reference-paper paragraphs into reusable套路
+5. allocate套路 across the remaining paragraphs
+6. assign sentence roles inside each remaining paragraph
+7. render the planning layer into TeX only if PDF review is requested
+8. draft or revise remaining prose after the planning layer is approved
 
-Do not switch templates within the same manuscript.
+If prose was written too early, roll back conceptually to the last approved
+planning layer and continue from there.
 
-## Sentence Role Checks
+## 3. Chapter And Section Containers
 
-Before prose, each planned paragraph should answer:
+For each chapter or section, decide before drafting:
 
-1. What old information anchors the opening sentence?
-2. Where does the local point become visible?
-3. Which sentence introduces the problem, tension, or unresolved issue?
-4. Which sentence provides evidence, mechanism, or warrant?
-5. How does the paragraph land or hand off?
+1. what this unit must do
+2. what it should not do
+3. how it connects from the previous unit
+4. what object it hands to the next unit
 
-If these are not fixed, do not draft the paragraph yet.
+Minimum deliverables:
 
-## Output Discipline
+- chapter or section container map
+- fixed paragraph identity map
+- local handoff between adjacent units
 
-If the user is reviewing planning, keep output at the planning layer. Do not
-advance to prose unless the user asks for drafting or approves the plan.
+Common paragraph identities:
 
-For active manuscript work, the durable output is the target `.tex` file, not a
-new planning Markdown file.
+- 本章首段
+- 本章末段
+- 本节首段
+- 本节末段
+- 本小节首段
+- 本小节末段
+- 承上启下段
+- 证据铺陈段
+- 机制展开段
+- 研究设计交代段
+
+Do not draft middle paragraphs before fixed paragraph identities are known.
+
+## 4. First And Last Paragraphs
+
+Opening paragraphs usually need:
+
+1. authority, context, or previous-unit connection
+2. unit task
+3. problem narrowing
+4. response or roadmap when useful
+
+Closing paragraphs usually need:
+
+1. local finding or section summary
+2. unresolved-point compression
+3. handoff to the next unit
+
+Before writing either paragraph, map the sentence obligations. The default macro
+sequence is `context -> problem -> response`. For local arguments, check
+`claim -> reason -> evidence -> warrant`.
+
+## 5. Reference-Paragraph Pattern Inventory
+
+When a Chinese reference paper is provided, extract organization patterns rather
+than imitating wording.
+
+For each reference paragraph, record:
+
+1. paragraph role
+2. paragraph task
+3. opening move
+4. sentence-function sequence
+5. landing move
+6. reusable套路 label
+7. whether it completes `context -> problem -> response`
+8. whether it completes `claim -> reason -> evidence -> warrant`
+
+Typical reusable patterns:
+
+- problem difficulty -> existing handling -> gap
+- grouped literature -> consensus -> specific insufficiency
+- mechanism split -> conditional distinction -> landing
+- concept definition -> boundary clarification -> why it matters here
+- empirical challenge -> measurement response -> handoff to method
+- section mini-summary -> transition to next block
+
+## 6. Paragraph Allocation
+
+Treat remaining paragraphs as a distribution problem.
+
+For the current chapter or section:
+
+1. estimate how many middle paragraphs are needed
+2. assign one primary套路 to each paragraph
+3. avoid identical opening moves in adjacent paragraphs
+4. avoid identical landing moves in adjacent paragraphs
+5. avoid turning every paragraph into `topic sentence + literature list + gap`
+
+Variation serves readability; it must not break the paper's logic.
+
+## 7. Sentence-Role Planning
+
+Before writing a paragraph, assign one dominant job to each sentence.
+
+Common roles:
+
+1. `权威启动句`
+2. `背景定位句`
+3. `问题提出句`
+4. `观点句`
+5. `承接句`
+6. `展开句`
+7. `例证句` or mechanism sentence
+8. `warrant句` or `解释关联句`
+9. `收束句`
+10. `过渡句`
+
+Check every sentence-role plan:
+
+- The paragraph point appears early enough.
+- Sentence openings follow old information before new information.
+- Key actions are carried by verbs rather than abstract nouns.
+- Evidence is followed by a visible warrant.
+- The paragraph lands rather than ending with citations or generic value.
+
+## 8. Output Discipline
+
+For active manuscript work, the durable output is the target `.tex` file.
+
+When the user is reviewing planning, output the planning layer only. When the
+user approves drafting, write prose into TeX and then run `post-draft-audit.md`.

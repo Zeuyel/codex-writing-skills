@@ -1,4 +1,7 @@
 interface:
   display_name: "ZH Journal Humanizer"
-  short_description: "中文经管期刊风格润色：帽子段、衔接、落点与术语统一"
-  default_prompt: "Use $zh-journal-humanizer to rewrite this Chinese academic passage in a natural economics or management journal style."
+  short_description: "兼容旧写作入口；正式论文写作请使用总控 skill"
+  default_prompt: "Use $zh-empirical-paper-writer for formal Chinese journal prose; $zh-journal-humanizer is a legacy wrapper."
+
+policy:
+  allow_implicit_invocation: false
