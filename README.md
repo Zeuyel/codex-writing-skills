@@ -25,6 +25,11 @@ the writing, review, theory, and audit references needed for each task.
 For daily Codex use, install only `skills/zh-empirical-paper-writer` unless you
 need a legacy wrapper for explicit backward compatibility.
 
+The old local `zh-writing-audit` skill is folded into
+`skills/zh-empirical-paper-writer/references/post-draft-audit.md`; every
+prose-producing writing task should run that audit layer through the total
+writer skill.
+
 ## Maintenance
 
 Edit the skill source in this repository and sync changes into the local Codex skill directory when needed.

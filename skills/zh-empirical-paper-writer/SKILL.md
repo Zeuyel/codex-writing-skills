@@ -7,8 +7,9 @@ description: >-
   paragraph and sentence obligations, Chinese journal prose, literature reviews,
   theory/model logic, post-draft audits, PDF review, or replacing a TeX
   paragraph. Enforces that active manuscript work edits the target .tex source
-  and compiled PDF instead of Markdown drafts, and dynamically loads only the
-  needed reference rules.
+  and compiled PDF instead of Markdown drafts, runs post-draft audit after every
+  prose-producing writing pass, and dynamically loads only the needed reference
+  rules.
 ---
 
 # Zh Empirical Paper Writer
@@ -57,8 +58,10 @@ crosses modes.
 | `post-draft-audit` | A paragraph or section has already been drafted and needs final Chinese academic expression audit | `references/post-draft-audit.md` |
 | `pdf-review` | Compile PDF, expose planning layer for PDF inspection, or verify TeX output | `references/asset-governance.md` |
 
-For active prose drafting or revision, load `references/post-draft-audit.md`
-before presenting the final text or considering the edit complete.
+For any task that produces or revises manuscript prose, including literature
+review prose, theory prose, paragraph replacement, and contribution wording, load
+`references/post-draft-audit.md` after the primary task reference. Planning-only
+layers do not require this audit.
 
 ## Default Workflow
 
@@ -67,9 +70,12 @@ before presenting the final text or considering the edit complete.
 3. Load `references/asset-governance.md` if the task touches manuscript assets.
 4. Load only the mode-specific reference file.
 5. Edit the target `.tex` file using the project's existing macros and style.
-6. Preserve TeX paragraph boundaries exactly when replacing a paragraph.
-7. Compile or run the project's TeX smoke command when feasible.
-8. Report the `.tex` file changed, the PDF/build result, and any blocker.
+6. Run `references/post-draft-audit.md` for any prose-producing edit and repair
+   the `.tex` candidate when the audit finds problems.
+7. Preserve TeX paragraph boundaries exactly when replacing a paragraph.
+8. Compile or run the project's TeX smoke command when feasible.
+9. Report the `.tex` file changed, the audit result, the PDF/build result, and
+   any blocker.
 
 ## Failure Triggers
 
@@ -83,12 +89,14 @@ Stop and resolve the issue when any of these occur:
   literature base.
 - A specialized term or project-defined concept appears without a concrete
   source article and a short explanation of how this manuscript uses it.
+- Actual manuscript prose would be shown, marked complete, or left in TeX as the
+  candidate version without a post-draft audit pass.
 - A TeX compile fails after an edit; inspect the log and fix local causes before
   handing back the result when the fix is in scope.
 
 ## Legacy Skills
 
 Legacy skill folders for `paper-assembly-protocol`, `zh-journal-humanizer`, and
-`empirical-literature-builder` are compatibility wrappers only. Do not load them
-as default writing entry points. Their core rules live in this skill's
-`references/` files.
+`empirical-literature-builder` are compatibility wrappers only. The old
+`zh-writing-audit` behavior is folded into `references/post-draft-audit.md`.
+Do not load any of them as default writing entry points.
