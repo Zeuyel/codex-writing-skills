@@ -1,0 +1,7 @@
+interface:
+  display_name: "Paper Assembly Protocol"
+  short_description: "兼容旧写作入口；正式论文写作请使用总控 skill"
+  default_prompt: "Use $zh-empirical-paper-writer for formal paper assembly; $paper-assembly-protocol is a legacy wrapper."
+
+policy:
+  allow_implicit_invocation: false
