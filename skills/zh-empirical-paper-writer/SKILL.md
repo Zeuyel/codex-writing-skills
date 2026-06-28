@@ -81,6 +81,8 @@ Stop and resolve the issue when any of these occur:
 - A paragraph replacement would become a list, table, or multiple TeX paragraphs.
 - A literature, novelty, or contribution claim is unsupported by the verified
   literature base.
+- A specialized term or project-defined concept appears without a concrete
+  source article and a short explanation of how this manuscript uses it.
 - A TeX compile fails after an edit; inspect the log and fix local causes before
   handing back the result when the fix is in scope.
 

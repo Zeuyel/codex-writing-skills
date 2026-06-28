@@ -22,8 +22,8 @@ Flag high risk when:
 7. the same concept appears under multiple variable names
 8. dynamic claims lack a stable state vector or transition process
 
-When two hard gates fail, treat the theory object as not ready for manuscript
-polishing.
+When two or more hard gates fail, treat the theory object as not ready for
+manuscript polishing.
 
 ## Review Workflow
 

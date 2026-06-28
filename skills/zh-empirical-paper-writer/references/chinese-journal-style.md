@@ -108,7 +108,7 @@ Use two material layers:
 
 1. the general bank below for common nouns, verbs, collocations, and connectors
 2. the project bank when available, usually
-   `notes/material_banks/project_material_bank.md`
+   `research-notes/writing/material-banks/project_material_bank.md`
 
 Default loading order:
 
@@ -120,6 +120,25 @@ Default loading order:
 Do not improvise a low-frequency collocation if it is absent from the general
 bank, project bank, and reference register. Use a simpler native expression or
 mark it for later supplementation.
+
+### Specialized-Term Provenance
+
+Specialized terms are allowed only when they are traceable.
+
+For the first manuscript use of a term such as `技术轨道`, `技术空间`,
+`边界搜索`, `能力边界`, `组织验证能力`, or `升级陷阱`, the prose or nearby
+literature setup must make clear:
+
+1. which article, theory stream, or project theorem introduced or supports the
+   term;
+2. what the term means in plain firm-level behavior;
+3. what this manuscript will observe in data for that term.
+
+If no source article or project theorem can be named, replace the term with
+ordinary object-language, such as `企业是否进入过去没有申请过专利的技术类别`.
+
+Do not use abstract nouns as private shorthand. Readers should not need to infer
+the author's hidden concept map.
 
 ### Stable Object Nouns
 
