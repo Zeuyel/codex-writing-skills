@@ -7,9 +7,10 @@ description: >-
   paragraph and sentence obligations, Chinese journal prose, literature reviews,
   theory/model logic, post-draft audits, PDF review, or replacing a TeX
   paragraph. Enforces that active manuscript work edits the target .tex source
-  and compiled PDF instead of Markdown drafts, runs post-draft audit after every
-  prose-producing writing pass, and dynamically loads only the needed reference
-  rules.
+  and compiled PDF instead of Markdown drafts, follows the staged writing order
+  before prose unless the user explicitly requests direct replacement or
+  revision, runs post-draft audit after every prose-producing writing pass, and
+  dynamically loads only the needed reference rules.
 ---
 
 # Zh Empirical Paper Writer
@@ -22,6 +23,44 @@ load legacy writing skills as separate default entry points.
 
 This skill owns the asset rule for active manuscript writing: the authoritative
 assets are the target `.tex` manuscript source and the PDF generated from it.
+
+## Container-Plan Gate
+
+Before drafting new formal prose from an outline, chapter task, section task, or
+paragraph plan, require a current container plan. Do not jump from a topic,
+outline, literature point, or loose paragraph idea directly to polished
+manuscript text.
+
+The container plan is mandatory for new prose. It must fix:
+
+1. chapter or section container
+2. target section or subsection, including its title or working title
+3. section-level task, boundary, and handoff to adjacent sections
+4. paragraph inventory inside that section
+5. paragraph identity
+6. paragraph duty
+7. paragraph pattern
+8. sentence-role sequence
+9. current sentence obligations
+
+If any of these are missing, route first to `container-planning` and load
+`references/assembly-workflow.md`. Drafting begins only after the container plan
+is explicit and approved, unless the user is only replacing or auditing already
+drafted prose.
+
+Default order:
+
+1. create or confirm the container plan
+2. write first and last paragraphs as manuscript prose when building a unit
+3. decompose reference-paper paragraph patterns when a reference is available
+4. allocate patterns across the remaining paragraphs
+5. assign sentence roles inside each remaining paragraph
+6. draft or revise remaining prose only after the planning layer is approved
+7. run post-draft audit for every prose-producing step
+
+If the user asks for direct paragraph replacement, targeted revision, or review
+of already drafted prose, route directly to the relevant mode, but still preserve
+TeX/PDF asset rules and run post-draft audit before completion.
 
 ## Hard Asset Rules
 
@@ -82,6 +121,7 @@ layers do not require this audit.
 Stop and resolve the issue when any of these occur:
 
 - Active manuscript writing has no known target `.tex` file.
+- New manuscript prose would be drafted without an explicit container plan.
 - The next action would create a Markdown正文草稿 for formal manuscript text.
 - Planning content would appear in the PDF without an explicit PDF-review request.
 - A paragraph replacement would become a list, table, or multiple TeX paragraphs.

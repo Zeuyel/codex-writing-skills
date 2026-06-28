@@ -23,7 +23,11 @@ review.
 
 - Do not freewrite a whole chapter by default.
 - Do not jump directly from an outline to polished prose.
-- Treat chapter and section types as fixed containers before writing.
+- Treat chapter, section, and subsection types as fixed containers before
+  writing.
+- Fix the target section or subsection before planning individual paragraphs.
+  A paragraph cannot be drafted only from a loose topic; it must belong to a
+  named or working-titled section container.
 - Quality comes mainly from paragraph arrangement and sentence roles inside
   containers, not from one-pass generation.
 - Every staged planning step is gated by user review unless the user explicitly
@@ -40,32 +44,42 @@ a literature review, load `literature-review.md`.
 
 Follow this order unless the user explicitly overrides it:
 
-1. fill the chapter or section slots
-2. map sentence obligations for first and last paragraphs
-3. write first and last paragraphs as manuscript prose
-4. decompose reference-paper paragraphs into reusable套路
-5. allocate套路 across the remaining paragraphs
-6. assign sentence roles inside each remaining paragraph
-7. render the planning layer into TeX only if PDF review is requested
-8. draft or revise remaining prose after the planning layer is approved
+1. fill the chapter slots
+2. fix target section or subsection slots, including titles or working titles
+3. define each section's task, boundary, and handoff
+4. map sentence obligations for first and last paragraphs
+5. write first and last paragraphs as manuscript prose
+6. decompose reference-paper paragraphs into reusable套路
+7. allocate套路 across the remaining paragraphs
+8. assign sentence roles inside each remaining paragraph
+9. render the planning layer into TeX only if PDF review is requested
+10. draft or revise remaining prose after the planning layer is approved
 
 If prose was written too early, roll back conceptually to the last approved
 planning layer and continue from there.
 
 ## 3. Chapter And Section Containers
 
-For each chapter or section, decide before drafting:
+For each chapter, section, or subsection, decide before drafting:
 
 1. what this unit must do
 2. what it should not do
 3. how it connects from the previous unit
 4. what object it hands to the next unit
+5. what title or working title identifies this unit in the manuscript
+6. which paragraphs belong inside this unit
 
 Minimum deliverables:
 
 - chapter or section container map
+- section/subsection slot map with titles or working titles
+- section-level task, boundary, and handoff statement
+- paragraph inventory for each section before prose
 - fixed paragraph identity map
 - local handoff between adjacent units
+
+If the section is not fixed, stop at container planning. Do not draft a paragraph
+and decide later which section it belongs to.
 
 Common paragraph identities:
 
